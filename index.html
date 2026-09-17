@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>StockWise Inventory</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="brand">
+          <span class="brand-icon">
+            <i data-lucide="boxes"></i>
+          </span>
+
+          <span class="brand-text">StockWise</span>
+        </div>
+
+        <!-- Navigation items are created in app.js -->
+        <nav id="nav"></nav>
+
+        <!-- Administrator profile -->
+        <div class="sidebar-profile">
+          <img
+            id="sideAvatar"
+            src=""
+            alt="Administrator profile"
+          />
+
+          <div>
+            <b id="sideName">Administrator</b>
+            <small>Administrator</small>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Mobile sidebar overlay -->
+      <div id="overlay"></div>
+
+      <!-- Main content -->
+      <main class="main">
+        <!-- Top navigation bar -->
+        <header>
+          <button
+            id="menuBtn"
+            class="icon-btn"
+            type="button"
+            title="Open menu"
+            aria-label="Open menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="header-search">
+            <i data-lucide="search"></i>
+
+            <input
+              id="globalSearch"
+              type="search"
+              placeholder="Search products..."
+              aria-label="Search products"
+            />
+          </div>
+
+          <button
+            id="themeBtn"
+            class="icon-btn"
+            type="button"
+            title="Toggle theme"
+            aria-label="Toggle light or dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+
+          <button
+            class="icon-btn notify"
+            type="button"
+            title="Notifications"
+            aria-label="View notifications"
+          >
+            <i data-lucide="bell"></i>
+            <span id="alertCount">0</span>
+          </button>
+        </header>
+
+        <!-- Page content is created in app.js -->
+        <section id="content"></section>
+      </main>
+    </div>
+
+    <!-- Notification messages -->
+    <div id="toastBox"></div>
+
+    <!-- Reusable modal -->
+    <div
+      id="modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close icon-btn"
+          type="button"
+          data-close
+          title="Close"
+          aria-label="Close dialog"
+        >
+          <i data-lucide="x"></i>
+        </button>
+
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- Hidden input used for importing a JSON backup -->
+    <input
+      id="importFile"
+      type="file"
+      accept="application/json,.json"
+      hidden
+    />
+
+    <!-- JavaScript files -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

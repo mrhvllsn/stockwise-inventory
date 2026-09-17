@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>Login | StockWise</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  </head>
+
+  <body class="login-page">
+    <main class="login-card">
+      <!-- System logo -->
+      <div class="brand large">
+        <span class="brand-icon">
+          <i data-lucide="boxes"></i>
+        </span>
+
+        <span>StockWise</span>
+      </div>
+
+      <p class="muted">Inventory Management System</p>
+
+      <!-- Login form -->
+      <form id="loginForm">
+        <label for="username">
+          Username
+
+          <input
+            id="username"
+            name="username"
+            type="text"
+            value="admin"
+            autocomplete="username"
+            required
+          />
+        </label>
+
+        <label for="password">
+          Password
+
+          <div class="password-wrap">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value="admin123"
+              autocomplete="current-password"
+              required
+            />
+
+            <button
+              id="togglePassword"
+              class="icon-btn"
+              type="button"
+              title="Show or hide password"
+              aria-label="Show or hide password"
+            >
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </label>
+
+        <label class="check" for="remember">
+          <input
+            id="remember"
+            name="remember"
+            type="checkbox"
+          />
+
+          <span>Remember login</span>
+        </label>
+
+        <!-- Incorrect login message -->
+        <p
+          id="loginError"
+          class="form-error"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+        <button class="primary wide" type="submit">
+          Sign In
+        </button>
+      </form>
+
+      <!-- Demonstration credentials -->
+      <div class="demo-note">
+        <b>Demo account</b>
+
+        <br />
+
+        Username: admin
+
+        <br />
+
+        Password: admin123
+      </div>
+    </main>
+
+    <!-- JavaScript files -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
